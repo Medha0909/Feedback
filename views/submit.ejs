@@ -20,7 +20,7 @@
       <p class="error"><%= error %></p>
     <% } %>
 
-    <form method="POST" action="/submit">
+    <form method="POST" action="https://feedback-w9hf.onrender.com/submit">
       <input type="text" name="name" placeholder="Your Name" value="<%= name %>" required />
       <textarea name="message" placeholder="Write your feedback here..." required><%= message %></textarea>
       <button type="submit">Submit</button>
