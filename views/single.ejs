@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feedback from <%= feedback.name %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="/submit">📝 Submit Feedback</a>
+    <a href="/feedbacks">💬 View All</a>
+  </nav>
+
+  <div class="container">
+    <h2>🗣️ Feedback from <%= feedback.name %></h2>
+
+    <div class="feedback-card">
+      <p><%= feedback.message %></p>
+      <small>📅 <%= feedback.createdAt.toLocaleString() %></small>
+      <br/><br/>
+      <p>🔗 Shareable link:</p>
+      <code><a href="<%= shareUrl %>"><%= shareUrl %></a></code>
+    </div>
+  </div>
+
+</body>
+</html>

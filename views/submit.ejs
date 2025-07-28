@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="/submit">📝 Submit Feedback</a>
+    <a href="/feedbacks">💬 View All</a>
+  </nav>
+
+  <div class="container">
+    <h2>Tell Us What You Think</h2>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form method="POST" action="/submit">
+      <input type="text" name="name" placeholder="Your Name" value="<%= name %>" required />
+      <textarea name="message" placeholder="Write your feedback here..." required><%= message %></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="/submit">📝 Submit Feedback</a>
+    <a href="/feedbacks">💬 View All</a>
+  </nav>
+
+  <div class="container">
+    <h2>What People Are Saying</h2>
+
+    <% if (feedbacks.length === 0) { %>
+      <p>No feedback yet. Be the first to share!</p>
+    <% } else { %>
+      <% feedbacks.forEach(fb => { %>
+        <div class="feedback-card">
+          <strong><%= fb.name %></strong>
+          <p><%= fb.message %></p>
+          <a href="/feedback/<%= fb._id %>">🔗 View More</a>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+
+</body>
+</html>
